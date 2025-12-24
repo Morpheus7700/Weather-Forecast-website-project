@@ -1,0 +1,64 @@
+{
+    "roy": {
+        "password_hash": "scrypt:32768:8:1$nGsrCXVG7uQS4Un3$8fb53e3d8d6d9950370b28a114b7db2fa7de0f38e8dafd42440fb9b6f8edfc3635a0ae8461c3e27a42bfc3a0d5a1d446035c4ad6c6f309f2523eb4395697a3f5",
+        "selected_cities": [
+            {
+                "country": "Japan",
+                "id": 1840034016,
+                "lat": 35.6897,
+                "lon": 139.6922,
+                "name": "Tokyo",
+                "tz": "Asia/Tokyo"
+            },
+            {
+                "country": "United States",
+                "id": 1840034015,
+                "lat": 40.7128,
+                "lon": -74.006,
+                "name": "New York",
+                "tz": "America/New_York"
+            },
+            {
+                "country": "United Kingdom",
+                "id": 1826788899,
+                "lat": 51.5072,
+                "lon": -0.1275,
+                "name": "London",
+                "tz": "Europe/London"
+            },
+            {
+                "country": "France",
+                "id": 1840033996,
+                "lat": 48.8566,
+                "lon": 2.3522,
+                "name": "Paris",
+                "tz": "Europe/Paris"
+            },
+            {
+                "country": "Australia",
+                "id": 1840033957,
+                "lat": -33.865,
+                "lon": 151.2094,
+                "name": "Sydney",
+                "tz": "Australia/Sydney"
+            },
+            {
+                "country": "United Arab Emirates",
+                "id": 1840031877,
+                "lat": 25.2048,
+                "lon": 55.2708,
+                "name": "Dubai",
+                "tz": "Asia/Dubai"
+            },
+            {
+                "country": "India",
+                "id": 1356872604,
+                "lat": 28.66,
+                "lon": 77.23,
+                "name": "Delhi",
+                "tz": "Asia/Kolkata"
+            }
+        ],
+        "units": "celsius"
+    }
+}
