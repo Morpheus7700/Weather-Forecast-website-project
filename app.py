@@ -15,6 +15,7 @@ except Exception:
 load_dotenv()
 
 app = Flask(__name__)
+app.logger.info("Initializing World Weather & Time App...")
 app.secret_key = os.getenv("FLASK_SECRET", "dev-secret-change-me")
 OPENWEATHERMAP_API_KEY = os.getenv("OPENWEATHERMAP_API_KEY")
 

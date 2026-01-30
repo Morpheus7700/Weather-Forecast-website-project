@@ -8,11 +8,15 @@ ENV PYTHONUNBUFFERED 1
 # Set the working directory in the container
 WORKDIR /app
 
-# Install system dependencies (build-essential for potential C-extensions)
+# Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    tzdata \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Cache busting to force a fresh build
+ENV REBUILD_VERSION=3
 
 # Install Python dependencies
 COPY requirements.txt .
