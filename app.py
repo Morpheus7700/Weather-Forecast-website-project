@@ -134,9 +134,6 @@ def get_air_quality_data(lat, lon):
     return air_quality
 
 
-    return air_quality
-
-
 def get_outfit_recommendation(temperature, weather_code, unit):
     if temperature is None or weather_code is None:
         return "N/A"
@@ -208,6 +205,7 @@ def get_city_data(city, unit="celsius"):
     tz = city.get('tz', 'UTC')
     weather = None
     time_str = None
+    forecast = []
     air_quality = get_air_quality_data(lat, lon) # Fetch air quality data
     alerts = get_weather_alerts(lat, lon) # Fetch weather alerts
     
@@ -294,7 +292,8 @@ def get_city_data(city, unit="celsius"):
         "air_quality": air_quality, # Add air quality data
         "alerts": alerts,
         "outfit_recommendation": outfit_recommendation, # Add outfit recommendation
-        "activity_recommendation": activity_recommendation # Add activity recommendation
+        "activity_recommendation": activity_recommendation, # Add activity recommendation
+        "weather_tip": weather_tip # Add weather tip
     }
     app.logger.info(f"Returning data for city {city['name']}: {result}")
     return result
@@ -419,6 +418,17 @@ def api_user_units():
             return jsonify({"units": new_units})
         app.logger.warning(f"Invalid unit provided: {new_units}")
         return jsonify({"error": "Invalid unit"}), 400
+
+@app.route("/api/weather_alerts")
+@login_required
+def api_weather_alerts():
+    lat = request.args.get("lat")
+    lon = request.args.get("lon")
+    if not lat or not lon:
+        return jsonify({"error": "Missing coordinates"}), 400
+    alerts = get_weather_alerts(lat, lon)
+    return jsonify({"alerts": alerts})
+
 
 @app.route("/api/cities")
 @login_required
