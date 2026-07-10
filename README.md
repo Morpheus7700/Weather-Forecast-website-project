@@ -1,23 +1,24 @@
-# World Weather & Time 🌦️⏱️
+# Weather-Forecast-website-project
 
-A minimal, fast Flask application that provides real-time weather forecasts and current local times for major cities around the globe.
+> A minimal Flask web app that shows real-time weather and local time for major cities.
 
-## ✨ Features
-- **Live Weather Data:** Fetches real-time weather conditions using the Open-Meteo API (no API key required).
-- **Accurate Time Zones:** Uses WorldTimeAPI to display exact local times across different global regions.
-- **User Authentication:** Simple session-based login and registration system.
-- **Clean Interface:** Responsive HTML/CSS frontend with a straightforward, easy-to-read dashboard.
+A small Flask application that fetches live weather from the Open-Meteo API (no API key required) and displays local times using IANA timezone data, behind a simple session-based login.
 
-## 🛠️ Tech Stack
+## Features
+- Live weather via the Open-Meteo API
+- Local times for cities across regions using timezone data
+- Session-based login and registration
+- Responsive HTML/CSS frontend
+
+## Tech Stack
 - **Backend:** Python, Flask, Requests
-- **Frontend:** HTML templates, CSS, Vanilla JS
-- **Deployment:** Docker, Gunicorn ready
+- **Frontend:** HTML templates, CSS, vanilla JS
+- **Deploy:** Docker and Gunicorn ready
 
-## ⚙️ Run Locally
+## Getting Started
 ```bash
 python -m venv venv
-venv\Scriptsctivate
+# Windows: venv\Scripts\activate  |  macOS/Linux: source venv/bin/activate
 pip install -r requirements.txt
-set FLASK_APP=app.py
 flask run
 ```
